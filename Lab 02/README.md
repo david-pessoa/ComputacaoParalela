@@ -25,4 +25,7 @@ a função pthread_create() para que possa ser usado como o parâmetro *args na 
 ## pthread_join()
 É importante que essa função seja usada para que o programa não encerre antes das threads terem terminado de executar,  
 pois, caso contrário, poderíamos obter um resultado diferente do esperado.
+
+# Execução do programa na AWS
+
   
