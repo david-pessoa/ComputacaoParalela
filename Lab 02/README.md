@@ -27,5 +27,6 @@ a função pthread_create() para que possa ser usado como o parâmetro *args na 
 pois, caso contrário, poderíamos obter um resultado diferente do esperado.
 
 # Execução do programa na AWS
+![](https://github.com/david-pessoa/ComputacaoParalela/blob/David/Lab%2002/FotoVetorC.png)
 
   
