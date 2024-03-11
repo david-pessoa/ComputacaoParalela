@@ -4,3 +4,8 @@
 
 ### Laboratório 01
 Print da frase "Hello World!"
+
+### Laboratório 02
+Multiplicação matriz-vetor
+
+### Laboratório 03
