@@ -123,7 +123,7 @@ int main()
 	multiplica_serial(C_serial);
 	end = clock();
 	serial_time = ((double)(end - start)) / CLOCKS_PER_SEC;
-	printf("Tempo de execução serial: %lfs\n", serial_time);
+	printf("Tempo de execução serial: %lfms\n", serial_time * 1000);
 	printf("Matriz serial: ");
 	show_vetor(C_serial, m); //Exibe o vetor C resultante
 
@@ -148,7 +148,7 @@ int main()
 		}
 		end = clock();
         parallel_time = ((double)(end - start)) / CLOCKS_PER_SEC;
-		printf("Tempo de execução em paralelo com %d processadores: %lfs\n", num_threads, parallel_time);
+		printf("Tempo de execução em paralelo com %d processadores: %lfms\n", num_threads, parallel_time * 1000);
 		printf("Matriz paralela: ");
 		show_vetor(C_paralela, m); //Exibe o vetor C resultante
 	}
