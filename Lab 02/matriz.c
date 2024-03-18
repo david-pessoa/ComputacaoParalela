@@ -3,6 +3,7 @@
 #include <stdio.h>
 #include <pthread.h>
 #include <time.h>
+#include <semaphore.h>
 #define m 24 //Número de linhas da matriz A
 #define n 8 //Número de colunas de A e linhas de B
 
@@ -47,6 +48,7 @@ struct ThreadArgs //struct contendo o vetor C resultante e o indíce de um dos e
     int* C;
     int index;
 	int num_threads;
+	sem_t* semaphore;
 };
 
 //Função multiplica() faz com que cada thread realize o cálculo do valor do item C[k]
@@ -56,22 +58,34 @@ void* multiplica(void *args)
     int k = t_args->index;
     int* vetor = t_args->C;
 	int threads = t_args->num_threads;
-
-    for(int j = 0; j < threads; j++)
+	sem_t* semaphore = t_args->semaphore;
+	printf("Threads: %d\n", threads);
+    for(int j = 0; j < m/threads; j++)
 	{
 		int valor = 0;
 		for(int i = 0; i < n; i++) //Realiza o cálculo do item C[k]
 		{
-			valor += A[threads * k + j][i] * B[i][0];
+			valor += A[(m/threads) * k + j][i] * B[i][0];
 		}
-		vetor[threads * k + j] = valor; //altera valor no vetor
-		//printf("%d index: %d k: %d j: %d\n", valor, threads * k + j, k, j);
+		sem_wait(semaphore);
+		vetor[(m/threads) * k + j] = valor; //altera valor no vetor
+		sem_post(semaphore); 
+		printf("%d index: %d k: %d j: %d\n", valor, (m/threads) * k + j, k, j);
 	}
-	if(threads == 1)
-		return vetor;
-	else
-		pthread_exit(NULL); // encerra a thread
+	pthread_exit(NULL); // encerra a thread
 	
+}
+void multiplica_serial(int vetor[])
+{
+	for(int j = 0; j < m; j++)
+	{
+		int valor = 0;
+		for(int i = 0; i < n; i++) //Realiza o cálculo do item C[k]
+		{
+			valor += A[j][i] * B[i][0];
+		}
+		vetor[j] = valor; //altera valor no vetor
+	}
 }
 
 void zera_vetor(int vetor[], int k) //Função para zerar o vetor (evita erros)
@@ -98,20 +112,15 @@ int main()
 	int C_serial[m]; //Matriz C resultante
 	int C_paralela[m];
 	zera_vetor(C_serial, m);
-	zera_vetor(C_paralela, m);
 	struct ThreadArgs args[m]; //args será passado como argumento para a thread
 
 	clock_t start, end;
     double serial_time, parallel_time;
+	sem_t semaphore;
+    sem_init(&semaphore, 0, 1);
 
 	start = clock();
-	for(int i = 0; i < m; i++) //Para cada linha da matriz A...
-	{
-		args[i].C = C_serial; //Guarda-se o vetor C e o número da linha i de A em args
-        args[i].index = i;
-		args[i].num_threads = 1;
-		multiplica((void *)&args[i]);
-	}
+	multiplica_serial(C_serial);
 	end = clock();
 	serial_time = ((double)(end - start)) / CLOCKS_PER_SEC;
 	printf("Tempo de execução serial: %lfs\n", serial_time);
@@ -127,6 +136,8 @@ int main()
 		{
 			args[j].C = C_paralela;
 			args[j].num_threads = num_threads;
+			args[j].index = j;
+			args[j].semaphore = &semaphore;
 			//Cria uma thread que executará o cálculo: C[m] = ∑(A[m][i] * B[i][0])
 			pthread_create(&threads[j], NULL, &multiplica, (void*)&args[j]);
 		}
@@ -141,6 +152,7 @@ int main()
 		printf("Matriz paralela: ");
 		show_vetor(C_paralela, m); //Exibe o vetor C resultante
 	}
+	sem_destroy(&semaphore);
 
 return 0;
 }
