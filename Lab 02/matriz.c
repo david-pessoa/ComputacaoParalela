@@ -46,6 +46,7 @@ struct ThreadArgs //struct contendo o vetor C resultante e o indíce de um dos e
 {
     int* C;
     int index;
+	int num_threads;
 };
 
 //Função multiplica() faz com que cada thread realize o cálculo do valor do item C[k]
@@ -54,14 +55,23 @@ void* multiplica(void *args)
 	struct ThreadArgs* t_args = (struct ThreadArgs*)args; //extrai o vetor C e o índice k do parâmetro args passado
     int k = t_args->index;
     int* vetor = t_args->C;
-    
-    int valor = 0;
-	for(int i = 0; i < n; i++) //Realiza o cálculo do item C[k]
+	int threads = t_args->num_threads;
+
+    for(int j = 0; j < threads; j++)
 	{
-		valor += A[k][i] * B[i][0];
+		int valor = 0;
+		for(int i = 0; i < n; i++) //Realiza o cálculo do item C[k]
+		{
+			valor += A[threads * k + j][i] * B[i][0];
+		}
+		vetor[threads * k + j] = valor; //altera valor no vetor
+		//printf("%d index: %d k: %d j: %d\n", valor, threads * k + j, k, j);
 	}
-	vetor[k] = valor; //altera valor no vetor
-	pthread_exit(NULL); // encerra a thread
+	if(threads == 1)
+		return vetor;
+	else
+		pthread_exit(NULL); // encerra a thread
+	
 }
 
 void zera_vetor(int vetor[], int k) //Função para zerar o vetor (evita erros)
@@ -77,7 +87,7 @@ void show_vetor(int vetor[], int k) // Função para exibir todos os elementos d
 	printf("Vetor final: [");
 	for(int i = 0; i < k; i++)
 	{
-		printf("%d, ", vetor[i]);	
+		printf("%d, ", vetor[i]);
 	}
 	printf("]\n");
 }
@@ -99,20 +109,24 @@ int main()
 	{
 		args[i].C = C_serial; //Guarda-se o vetor C e o número da linha i de A em args
         args[i].index = i;
-		multiplica(&args[i]);
+		args[i].num_threads = 1;
+		multiplica((void *)&args[i]);
 	}
 	end = clock();
 	serial_time = ((double)(end - start)) / CLOCKS_PER_SEC;
-	printf("Tempo de execução serial: %fs\n", &serial_time);
+	printf("Tempo de execução serial: %lfs\n", serial_time);
 	printf("Matriz serial: ");
 	show_vetor(C_serial, m); //Exibe o vetor C resultante
 
-	for(int i = 1; i <= n; i *= 2)
+	for(int i = 2; i <= n; i += 2)
 	{
 		int num_threads = i;
+		zera_vetor(C_paralela, m);
 		start = clock();
 		for(int j = 0; j < num_threads; j++) //Para cada linha da matriz A...
 		{
+			args[j].C = C_paralela;
+			args[j].num_threads = num_threads;
 			//Cria uma thread que executará o cálculo: C[m] = ∑(A[m][i] * B[i][0])
 			pthread_create(&threads[j], NULL, &multiplica, (void*)&args[j]);
 		}
@@ -123,12 +137,10 @@ int main()
 		}
 		end = clock();
         parallel_time = ((double)(end - start)) / CLOCKS_PER_SEC;
-		printf("Tempo de execução em paralelo com %d processadores: %fs\n", &num_threads, &serial_time);
+		printf("Tempo de execução em paralelo com %d processadores: %lfs\n", num_threads, parallel_time);
 		printf("Matriz paralela: ");
 		show_vetor(C_paralela, m); //Exibe o vetor C resultante
-
 	}
-
 
 return 0;
 }
