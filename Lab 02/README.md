@@ -43,7 +43,7 @@ pois, caso contrário, poderíamos obter um resultado diferente do esperado.
 2. Qual o speedup para 1, 2, 4, 6 e 8 processadores? Desenhe um gráfico mostrando os diferentes valores de speedup.
  ![](https://github.com/david-pessoa/ComputacaoParalela/blob/main/Lab%2002/Gr%C3%A1fico%20dos%20speed%20up.jpeg) <!--Foto gráfico speed up-->
 
-3. Como você acha que poderia melhorar o seu algoritmo para obter maior benefício com o paralelismo? Para provar seu ponto, refaça a solução com essa abordagem e construa um novo gráfico de speedup para 1, 2, 4, 6 e 8 processadores.
+3. Como você acha que poderia melhorar o seu algoritmo para obter maior benefício com o paralelismo?
 
 Pode-se obter maior benefício do paralelismo no programa multiMatrizes.c se dividirmos o vetor resultante C em subvetores para cada thread. Então, sendo t o número de threads e m o número de itens em C, cada thread ficará responsável por calcular m/t itens de C.
 
