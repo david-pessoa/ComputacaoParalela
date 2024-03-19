@@ -30,25 +30,25 @@ a função pthread_create() para que possa ser usado como o parâmetro *args na 
 pois, caso contrário, poderíamos obter um resultado diferente do esperado.
 
 # Execução do programa na AWS
-![](https://github.com/david-pessoa/ComputacaoParalela/blob/David/Lab%2002/executa%20multimatrizes.png)
+![](https://github.com/david-pessoa/ComputacaoParalela/blob/main/Lab%2002/executa%20multimatrizes.png)
 
 # Lab02b
 ## Execução do programa matriz.c
-![](https://github.com/david-pessoa/ComputacaoParalela/blob/David/Lab%2002/executa%20matrizes.png)  
+![](https://github.com/david-pessoa/ComputacaoParalela/blob/main/Lab%2002/executa%20matrizes.png)  
 ## Exercícios
 1. Qual o tempo de execução serial e paralelo para 1, 2, 4, 6 e 8 processadores? Desenhe um gráfico contendo todos os tempos de execução
    
-![](https://github.com/david-pessoa/ComputacaoParalela/blob/David/Lab%2002/Gra%CC%81fico%20dos%20tempos.jpeg) <!--Foto gráfico dos tempos-->
+![](https://github.com/david-pessoa/ComputacaoParalela/blob/main/Lab%2002/Gr%C3%A1fico%20dos%20tempos.jpeg) <!--Foto gráfico dos tempos-->
 
 2. Qual o speedup para 1, 2, 4, 6 e 8 processadores? Desenhe um gráfico mostrando os diferentes valores de speedup.
- ![](https://github.com/david-pessoa/ComputacaoParalela/blob/David/Lab%2002/Gra%CC%81fico%20dos%20speed%20up.jpeg) <!--Foto gráfico speed up-->
+ ![](https://github.com/david-pessoa/ComputacaoParalela/blob/main/Lab%2002/Gr%C3%A1fico%20dos%20speed%20up.jpeg) <!--Foto gráfico speed up-->
 
 3. Como você acha que poderia melhorar o seu algoritmo para obter maior benefício com o paralelismo? Para provar seu ponto, refaça a solução com essa abordagem e construa um novo gráfico de speedup para 1, 2, 4, 6 e 8 processadores.
 
 Pode-se obter maior benefício do paralelismo no programa multiMatrizes.c se dividirmos o vetor resultante C em subvetores para cada thread. Então, sendo t o número de threads e m o número de itens em C, cada thread ficará responsável por calcular m/t itens de C.
 
 ## Especificações do processador
-![](https://github.com/david-pessoa/ComputacaoParalela/blob/David/Lab%2002/htop.png)
+![](https://github.com/david-pessoa/ComputacaoParalela/blob/main/Lab%2002/htop.png)
 
 
   
