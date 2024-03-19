@@ -1,5 +1,5 @@
 # Multiplicação matriz-vetor
-O programa matriz.c realiza a multiplicação entre as matrizes A[3][8] e B[8][1], gerando um vetor C[3].
+O programa Multimatrizes.c realiza a multiplicação entre as matrizes A[3][8] e B[8][1], gerando um vetor C[3].
 Para realizar esta operação por meio de threads, utilizou-se uma thread para gerar cada elemento do vetor C  
 pela fórmula: C[m] = ∑(A[m][i] * B[i][0]).
 
@@ -30,17 +30,17 @@ a função pthread_create() para que possa ser usado como o parâmetro *args na 
 pois, caso contrário, poderíamos obter um resultado diferente do esperado.
 
 # Execução do programa na AWS
-![](https://github.com/david-pessoa/ComputacaoParalela/blob/David/Lab%2002/FotoVetorC.png)
+![]()
 
 # Lab02b
-## Execução do programa
-![](https://github.com/david-pessoa/ComputacaoParalela/blob/David/Lab%2002/Captura%20de%20Tela%202024-03-18%20a%CC%80s%2020.30.36.png)  
+## Execução do programa matriz.c
+![]()  
 ## Exercícios
 1. Qual o tempo de execução serial e paralelo para 1, 2, 4, 6 e 8 processadores? Desenhe um gráfico contendo todos os tempos de execução
- ![](https://github.com/david-pessoa/ComputacaoParalela/blob/David/Lab%2002/Gra%CC%81fico%20dos%20tempos.jpeg) <!--Foto gráfico dos tempos-->
+ ![]() <!--Foto gráfico dos tempos-->
 
 2. Qual o speedup para 1, 2, 4, 6 e 8 processadores? Desenhe um gráfico mostrando os diferentes valores de speedup.
- ![](https://github.com/david-pessoa/ComputacaoParalela/blob/David/Lab%2002/Gra%CC%81fico%20dos%20speed%20ups.jpeg) <!--Foto gráfico speed up-->
+ ![]() <!--Foto gráfico speed up-->
 
 3. Como você acha que poderia melhorar o seu algoritmo para obter maior benefício com o paralelismo? Para provar seu ponto, refaça a solução com essa abordagem e construa um novo gráfico de speedup para 1, 2, 4, 6 e 8 processadores.
 
