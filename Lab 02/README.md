@@ -43,8 +43,6 @@ pois, caso contrário, poderíamos obter um resultado diferente do esperado.
 2. Qual o speedup para 1, 2, 4, 6 e 8 processadores? Desenhe um gráfico mostrando os diferentes valores de speedup.
  ![](https://github.com/david-pessoa/ComputacaoParalela/blob/David/Lab%2002/Gra%CC%81fico%20dos%20speed%20up.jpeg) <!--Foto gráfico speed up-->
 
-3. Como você acha que poderia melhorar o seu algoritmo para obter maior benefício com o paralelismo? Para provar seu ponto, refaça a solução com essa abordagem e construa um novo gráfico de speedup para 1, 2, 4, 6 e 8 processadores. <!--Não sei como fazer aaaaa-->
-
 ## Especificações do processador
 ![](https://github.com/david-pessoa/ComputacaoParalela/blob/David/Lab%2002/htop.png)
 
