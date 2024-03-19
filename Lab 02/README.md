@@ -11,7 +11,7 @@ n = 8 --> Número de colunas de A e linhas de B
 * `void* multiplica(void *args)`
   * Esta função é executada pelas threads para gerar um valor do vetor C, conforme a fórmula descrita anteriormente
     
-* `void multiplica_serial(int vetor[])`
+* `void multiplica_serial(int vetor[])` (somente no arquivo matriz.c)
   * Esta função executa a multiplicação entre as matrizes A e B de maneira serial (sem threads) e grava o resultado no vetor C passado
   
 * `void zera_vetor(int vetor[], int k)`
@@ -43,7 +43,9 @@ pois, caso contrário, poderíamos obter um resultado diferente do esperado.
 2. Qual o speedup para 1, 2, 4, 6 e 8 processadores? Desenhe um gráfico mostrando os diferentes valores de speedup.
  ![](https://github.com/david-pessoa/ComputacaoParalela/blob/David/Lab%2002/Gra%CC%81fico%20dos%20speed%20up.jpeg) <!--Foto gráfico speed up-->
 
-3. Como você acha que poderia melhorar o seu algoritmo para obter maior benefício com o paralelismo? Para provar seu ponto, refaça a solução com essa abordagem e construa um novo gráfico de speedup para 1, 2, 4, 6 e 8 processadores. <!--Não sei como fazer aaaaa-->
+3. Como você acha que poderia melhorar o seu algoritmo para obter maior benefício com o paralelismo? Para provar seu ponto, refaça a solução com essa abordagem e construa um novo gráfico de speedup para 1, 2, 4, 6 e 8 processadores.
+
+Pode-se obter maior benefício do paralelismo no programa multiMatrizes.c se dividirmos o vetor resultante C em subvetores para cada thread. Então, sendo t o número de threads e m o número de itens em C, cada thread ficará responsável por calcular m/t itens de C.
 
 ## Especificações do processador
 ![](https://github.com/david-pessoa/ComputacaoParalela/blob/David/Lab%2002/htop.png)
