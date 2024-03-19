@@ -8,13 +8,16 @@ m = 3 --> Número de linhas da matriz A e itens em C
 n = 8 --> Número de colunas de A e linhas de B
 
 ## Funções criadas:  
-* void* multiplica(void *args):
+* `void* multiplica(void *args)`
   * Esta função é executada pelas threads para gerar um valor do vetor C, conforme a fórmula descrita anteriormente
-
-* void zera_vetor(int vetor[], int k):
+    
+* `void multiplica_serial(int vetor[])`
+  * Esta função executa a multiplicação entre as matrizes A e B de maneira serial (sem threads) e grava o resultado no vetor C passado
+  
+* `void zera_vetor(int vetor[], int k)`
   * Esta função torna todos os elementos do vetor iguais a zero
   
-* void show_vetor(int vetor[], int k):
+* `void show_vetor(int vetor[], int k)`
   * Esta função é usada para exibir todos os elementos de um vetor (no caso, o vetor resultante C)
 
 ## struct ThreadArgs
@@ -28,5 +31,13 @@ pois, caso contrário, poderíamos obter um resultado diferente do esperado.
 
 # Execução do programa na AWS
 ![](https://github.com/david-pessoa/ComputacaoParalela/blob/David/Lab%2002/FotoVetorC.png)
+
+# Lab02b
+1. Qual o tempo de execução serial e paralelo para 1, 2, 4, 6 e 8 processadores? Desenhe um gráfico contendo todos os tempos de execução
+ ![]() <!-aaa->
+2. Qual o speedup para 1, 2, 4, 6 e 8 processadores? Desenhe um gráfico mostrando os diferentes valores de speedup.
+3. Como você acha que poderia melhorar o seu algoritmo para obter maior benefício com o paralelismo? Para provar seu ponto, refaça a solução com essa abordagem e construa um novo gráfico de speedup para 1, 2, 4, 6 e 8 processadores.
+
+
 
   
