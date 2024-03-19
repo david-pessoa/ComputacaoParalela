@@ -11,7 +11,7 @@ n = 8 --> Número de colunas de A e linhas de B
 * `void* multiplica(void *args)`
   * Esta função é executada pelas threads para gerar um valor do vetor C, conforme a fórmula descrita anteriormente
     
-* `void multiplica_serial(int vetor[])`
+* `void multiplica_serial(int vetor[])` (somente no arquivo matriz.c)
   * Esta função executa a multiplicação entre as matrizes A e B de maneira serial (sem threads) e grava o resultado no vetor C passado
   
 * `void zera_vetor(int vetor[], int k)`
