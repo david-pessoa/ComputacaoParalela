@@ -33,6 +33,9 @@ pois, caso contrário, poderíamos obter um resultado diferente do esperado.
 ![](https://github.com/david-pessoa/ComputacaoParalela/blob/David/Lab%2002/FotoVetorC.png)
 
 # Lab02b
+## Execução do programa
+![](https://github.com/david-pessoa/ComputacaoParalela/blob/David/Lab%2002/Captura%20de%20Tela%202024-03-18%20a%CC%80s%2020.30.36.png)  
+## Exercícios
 1. Qual o tempo de execução serial e paralelo para 1, 2, 4, 6 e 8 processadores? Desenhe um gráfico contendo todos os tempos de execução
  ![](https://github.com/david-pessoa/ComputacaoParalela/blob/David/Lab%2002/Gra%CC%81fico%20dos%20tempos.jpeg) <!--Foto gráfico dos tempos-->
 
