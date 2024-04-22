@@ -27,7 +27,8 @@ int main()
     const double COMP_THREAD = COMPRIMENTO / num_threads;
     double Area = 0;
 
-    while(ColAnterior < COMPRIMENTO)
+    int i = 0;
+    while(ColAtual < COMPRIMENTO)
     {
         ColAnterior = ColAtual;
         AltAnterior =  AltAtual;
@@ -35,9 +36,12 @@ int main()
         ColAtual += COMP_THREAD;
         AltAtual = func(ColAtual);
 
+
         //COMP_THREAD * (AltAnterior + AltAtual) / 2
         Area += COMP_THREAD * (AltAtual + AltAnterior) / 2;
+        i++;
     }
+    printf("i = %d\n", i);
     printf("A área total aproximada é: %lf", Area);
     return 0;
 }
