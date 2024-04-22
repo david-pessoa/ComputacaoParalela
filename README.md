@@ -9,3 +9,8 @@ Print da frase "Hello World!"
 Multiplicação matriz-vetor
 
 ### Laboratório 03
+Programação com OpenMP
+
+### Setup Linux Ubuntu AWS
+- sudo apt-get update
+- sudo apt install gcc

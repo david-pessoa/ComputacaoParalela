@@ -10,7 +10,7 @@ int main(int argc, char* argv[])
 {
     int thread_count = strtol(argv[1], NULL, 10);
 
-    # pragma omp parallel num_threads(threads_count)
+    # pragma omp parallel num_threads(thread_count)
     Hello();
     return 0;
 }
