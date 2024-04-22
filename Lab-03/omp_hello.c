@@ -2,6 +2,8 @@
 #include <stdlib.h>
 #include <omp.h>
 
+// Calcular a área 24π
+
 void Hello(void);
 
 int main(int argc, char* argv[])
