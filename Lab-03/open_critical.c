@@ -10,14 +10,14 @@
 #endif 
 
 #define PI 3.1415
-#define COMPRIMENTO 24 * PI
-#define TRAPZ_NUM 24 * 4
+#define COMPRIMENTO 24 * PI //Define comprimento que será calculado do eixo X
+#define TRAPZ_NUM 24 * 4 // Define número de trapézios a serem utilizados no total pelas threads
 // Calcular a área para comprimento 24π
 // Função f(x) = sen(x) + 2
 
-double Area = 0;
+double Area = 0; //Area a ser calculada
 
-double func(double x)
+double func(double x) //Função f(x) = sen(x) + 2
 {
     return sin(x) + 2;
 }
@@ -27,8 +27,8 @@ void AreaThread();
 int main(int argc, char* argv[])
 {
     clock_t start, end; //Variáveis para contar o tempo de início o fim da execução
-    start = clock();
-    int thread_count = strtol(argv[1], NULL, 10);
+    start = clock(); //Inicia contagem de tempo
+    int thread_count = strtol(argv[1], NULL, 10); // Armazena número de threads passado como argumento
 
 # pragma omp parallel num_threads(thread_count)
     AreaThread();
