@@ -1,3 +1,5 @@
+//*************************************** PARA COMPILAR, ESCREVA: gcc -g -Wall -fopenmp -o open open_parallel.c -lm ******************************
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
@@ -38,7 +40,7 @@ int main(int argc, char* argv[])
     end = clock();
     double exec_time = ((double)(end - start)) / CLOCKS_PER_SEC;
     exec_time *= 1000;
-    printf("O tempo demorado é: %lf", exec_time);
+    printf("O tempo de execução é: %lf\n", exec_time);
     return 0;
 }
 
