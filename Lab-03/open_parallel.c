@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <math.h>
 #include <semaphore.h>
+#include <time.h>
 
 #ifdef _OPENMP
 # include <omp.h>
@@ -25,14 +26,19 @@ void AreaThread();
 // comprimento p/ cada thread = 24π / num_threads
 int main(int argc, char* argv[])
 {
+    clock_t start, end; //Variáveis para contar o tempo de início o fim da execução
+    start = clock();
     sem_init(&semaphore, 0, 1);
     int thread_count = strtol(argv[1], NULL, 10);
 
 # pragma omp parallel num_threads(thread_count)
     AreaThread();
 
-    printf("A área total aproximada é: %lf", Area);
     sem_destroy(&semaphore);
+    end = clock();
+    double exec_time = ((double)(end - start)) / CLOCKS_PER_SEC;
+    exec_time *= 1000;
+    printf("O tempo demorado é: %lf", exec_time);
     return 0;
 }
 
@@ -53,6 +59,7 @@ void AreaThread()
   double coluna_atual = coluna_anterior + ALT_TRAPZ;
   double altura_anterior = func(coluna_anterior);
   double altura_altual = func(coluna_atual);
+
   sem_wait(&semaphore);
   Area += ALT_TRAPZ * (altura_altual + altura_anterior) / 2;
   sem_post(&semaphore);
