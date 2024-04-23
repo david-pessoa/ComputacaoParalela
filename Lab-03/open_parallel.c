@@ -9,7 +9,7 @@
 
 #define PI 3.1415
 #define COMPRIMENTO 24 * PI
-#define TRAPZ_NUM 8
+#define TRAPZ_NUM 24
 // Calcular a área para comprimento 24π
 // Função f(x) = sen(x) + 2
 
