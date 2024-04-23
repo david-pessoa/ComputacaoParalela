@@ -26,7 +26,7 @@ void AreaThread();
 int main(int argc, char* argv[])
 {
     sem_init(&semaphore, 0, 1);
-    int num_threads = strtol(argv[1], NULL, 10);
+    int thread_count = strtol(argv[1], NULL, 10);
 
 # pragma omp parallel num_threads(thread_count)
     AreaThread();
