@@ -13,7 +13,7 @@
 
 No gráfico a seguir podemos ver os valores de speedup quanto mais adicionamos processadores.
 
-###Gráfico de speedup:
+### Gráfico de speedup:
 ![image](https://github.com/david-pessoa/ComputacaoParalela/assets/112708096/b0e44935-2ffc-4822-bf0f-63c694da9561)
 
 
@@ -27,4 +27,4 @@ Utilizando a diretiva critical, é mais fácil isolar e controlar a zona crític
 ![image](https://github.com/david-pessoa/ComputacaoParalela/assets/112708096/98f813a7-ca78-4a09-8823-be8c7a077372)
 
 ## Especificações do processador utilizado na AWS:
-[CPU Info.txt](https://github.com/david-pessoa/ComputacaoParalela/files/15085570/CPU.Info.txt)#
+[CPU Info.txt](https://github.com/david-pessoa/ComputacaoParalela/files/15085570/CPU.Info.txt)
