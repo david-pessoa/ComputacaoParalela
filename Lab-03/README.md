@@ -5,11 +5,18 @@
 # Exercícios:
 ## 1) Qual o tempo de execução serial e paralelo para 1, 2, 4, 6 e 8 processadores? Desenhe um gráfico contendo todos os tempos de execução
 
+### Execução do código de open_parallel.c
+![tempos parallel](https://github.com/david-pessoa/ComputacaoParalela/assets/104323068/ee2425af-0cdd-4801-abd4-4517e2089187)
+
 ### Gráfico de tempo de execução:
 ![image](https://github.com/david-pessoa/ComputacaoParalela/assets/112708096/e452ea31-54af-4da4-8abd-f3b8653ebcdf)
 
 
 ## 2) Qual o speedup para 1, 2, 4, 6 e 8 processadores? Desenhe um gráfico mostrando os diferentes valores de speedup.
+
+### Execução do código de open_critical.c
+![tempos critical](https://github.com/david-pessoa/ComputacaoParalela/assets/104323068/82fe6ff1-5708-436a-bca8-c399f0560896)
+
 
 No gráfico a seguir podemos ver os valores de speedup quanto mais adicionamos processadores.
 
