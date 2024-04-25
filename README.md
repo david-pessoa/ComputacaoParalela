@@ -11,6 +11,9 @@ Multiplicação matriz-vetor
 ### Laboratório 03
 Programação com OpenMP (cálculo da área abaixo da senoide usando threads)
 
+### Projeto Final
+Projeto tartaruga 🐢
+
 ### Setup Linux Ubuntu AWS
 - sudo apt-get update
 - sudo apt install gcc
