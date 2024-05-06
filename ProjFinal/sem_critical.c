@@ -120,7 +120,7 @@ int main(int argc, char* argv[])
   exec_time *= 1000;
 
   gmp_printf("Euler: %.30113Ff\n", Euler); // 30.113 casas
-  printf("Tempo: %lf\n", exec_time);
-  //show_vetor(fat,N);
+  printf("Tempo: %lfms\n", exec_time);
+  
   return 0;
 }
