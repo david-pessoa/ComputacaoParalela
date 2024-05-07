@@ -13,11 +13,16 @@
 * Tempo de execução para 8 processadores: <img width="129" alt="sem8" src="https://github.com/david-pessoa/ComputacaoParalela/assets/104323068/051d3184-9f11-4a73-b854-5ef1b5b3c09d">
   Valor calculado do número de Euler para 8 processadores em: `sem_8.txt`.
 
-
+### Gráfico com os tempos de execução
+![tempos_sem_critical](https://github.com/david-pessoa/ComputacaoParalela/assets/104323068/7c49e366-d20d-46fe-abff-e778928c1570)
 
 
 ## 2) Qual o speedup para 1, 2, 4, 6 e 8 processadores? Desenhe um gráfico mostrando os diferentes valores de speedup.
+![speedup_sem_critical](https://github.com/david-pessoa/ComputacaoParalela/assets/104323068/2b648e3e-e230-4588-af03-3f0697611030)
+
 
 ## 3. Introduza na sua solução a diretiva critical. O que muda? Para provar seu ponto, refaça a solução com essa abordagem, calcule os novos valores e construa um novo gráfico de speedup para 1, 2, 4, 6 e 8 processadores.
 
 <!--IMPORTANTE: Adicione no README as especificações do processador utilizado para cada uma das execuções.-->
+### ![Especificações do processador no arquivo cpuinfo.txt]()
+
