@@ -26,3 +26,7 @@
 <!--IMPORTANTE: Adicione no README as especificações do processador utilizado para cada uma das execuções.-->
 ### [Especificações do processador no arquivo cpuinfo.txt](https://github.com/david-pessoa/ComputacaoParalela/blob/main/ProjFinal/cpuinfo.txt)
 
+## Como compilar o programa na plataforma disponibilizada;
+## Como executar o programa;
+## Como comprovar que os resultados propostos foram alcançados.
+
