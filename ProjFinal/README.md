@@ -1,9 +1,6 @@
 ## 1) Qual o tempo de execução serial e paralelo para 1, 2, 4, 6 e 8 processadores? Desenhe um gráfico contendo todos os tempos de execução
-* Tempo de execução para 1 processador:
-  <img width="128" alt="sem1" src="https://github.com/david-pessoa/ComputacaoParalela/assets/104323068/1c09493f-299c-475b-80b0-a712f94e13cd">
-
+* Tempo de execução para 1 processador: <img width="128" alt="sem1" src="https://github.com/david-pessoa/ComputacaoParalela/assets/104323068/1c09493f-299c-475b-80b0-a712f94e13cd">
   Valor calculado do número de Euler para 1 processador em: `sem_1.txt`.
-  
 * Tempo de execução para 2 processadores: <img width="128" alt="sem2" src="https://github.com/david-pessoa/ComputacaoParalela/assets/104323068/098b13b4-c1d7-4349-aaab-c736af6b45fd">
   Valor calculado do número de Euler para 2 processadores em: `sem_2.txt`.
 * Tempo de execução para 4 processadores: <img width="128" alt="sem4" src="https://github.com/david-pessoa/ComputacaoParalela/assets/104323068/fafe20b9-fae2-4eac-a63d-5cee55ed6c3f">
@@ -23,6 +20,16 @@
 
 ## 3. Introduza na sua solução a diretiva critical. O que muda? Para provar seu ponto, refaça a solução com essa abordagem, calcule os novos valores e construa um novo gráfico de speedup para 1, 2, 4, 6 e 8 processadores.
 
+* Tempo de execução para 1 processador: <img width="128" alt="omp1" src="https://github.com/david-pessoa/ComputacaoParalela/assets/112708096/4080479e-f9f7-4b60-8f47-bd6da520813d">
+  Valor calculado do número de Euler para 1 processador em: `omp_1.txt`.
+* Tempo de execução para 2 processadores: 
+  Valor calculado do número de Euler para 2 processadores em: `omp_2.txt`.
+* Tempo de execução para 4 processadores: 
+  Valor calculado do número de Euler para 4 processadores em: `omp_4.txt`.
+* Tempo de execução para 6 processadores: 
+  Valor calculado do número de Euler para 6 processadores em: `omp_6.txt`.
+* Tempo de execução para 8 processadores: 
+  Valor calculado do número de Euler para 8 processadores em: `omp_8.txt`.
 <!--IMPORTANTE: Adicione no README as especificações do processador utilizado para cada uma das execuções.-->
 
 ## Como compilar o programa na plataforma disponibilizada:
