@@ -16,17 +16,20 @@
 ### Gráfico com os tempos de execução
 ![tempos_sem_critical](https://github.com/david-pessoa/ComputacaoParalela/assets/104323068/7c49e366-d20d-46fe-abff-e778928c1570)
 
-
 ## 2) Qual o speedup para 1, 2, 4, 6 e 8 processadores? Desenhe um gráfico mostrando os diferentes valores de speedup.
 ![speedup_sem_critical](https://github.com/david-pessoa/ComputacaoParalela/assets/104323068/2b648e3e-e230-4588-af03-3f0697611030)
 
+### [Especificações do processador usado nos exercícios 1 e 2 no arquivo cpuinfo.txt](https://github.com/david-pessoa/ComputacaoParalela/blob/main/ProjFinal/cpuinfo.txt)
 
 ## 3. Introduza na sua solução a diretiva critical. O que muda? Para provar seu ponto, refaça a solução com essa abordagem, calcule os novos valores e construa um novo gráfico de speedup para 1, 2, 4, 6 e 8 processadores.
 
 <!--IMPORTANTE: Adicione no README as especificações do processador utilizado para cada uma das execuções.-->
-### [Especificações do processador no arquivo cpuinfo.txt](https://github.com/david-pessoa/ComputacaoParalela/blob/main/ProjFinal/cpuinfo.txt)
 
-## Como compilar o programa na plataforma disponibilizada;
+## Como compilar o programa na plataforma disponibilizada:
+  * Passo a passo para  executar `sem_critical.c`:
+    1) Digite gcc -o programa sem_critical.c -lgmp
+    2) Execute o programa informando o número de threads (ex: 2 threads, `./programa 2`)
+       
 ## Como executar o programa;
 ## Como comprovar que os resultados propostos foram alcançados.
 
