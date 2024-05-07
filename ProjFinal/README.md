@@ -20,23 +20,34 @@
 
 ## 3. Introduza na sua solução a diretiva critical. O que muda? Para provar seu ponto, refaça a solução com essa abordagem, calcule os novos valores e construa um novo gráfico de speedup para 1, 2, 4, 6 e 8 processadores.
 
+Usando a diretiva critical, estamos usando outra biblioteca para aplicar o paralelismo, podendo causar certa diferença nos tempos de execução e speedup.
+
 * Tempo de execução para 1 processador: <img width="128" alt="omp1" src="https://github.com/david-pessoa/ComputacaoParalela/assets/112708096/4080479e-f9f7-4b60-8f47-bd6da520813d">
   Valor calculado do número de Euler para 1 processador em: `omp_1.txt`.
-* Tempo de execução para 2 processadores: 
+* Tempo de execução para 2 processadores: <img width="128" alt="omp2" src="https://github.com/david-pessoa/ComputacaoParalela/assets/112708096/8636924f-2e62-43c2-9d42-12dd496ebb70">
   Valor calculado do número de Euler para 2 processadores em: `omp_2.txt`.
-* Tempo de execução para 4 processadores: 
+* Tempo de execução para 4 processadores: <img width="128" alt="omp4" src="https://github.com/david-pessoa/ComputacaoParalela/assets/112708096/2cad8730-b398-49f4-b521-2190c5e987ee">
   Valor calculado do número de Euler para 4 processadores em: `omp_4.txt`.
-* Tempo de execução para 6 processadores: 
+* Tempo de execução para 6 processadores: <img width="128" alt="omp6" src="https://github.com/david-pessoa/ComputacaoParalela/assets/112708096/908d32f6-53ef-409b-801f-874a6672c92d">
   Valor calculado do número de Euler para 6 processadores em: `omp_6.txt`.
-* Tempo de execução para 8 processadores: 
+* Tempo de execução para 8 processadores: <img width="128" alt="omp8" src="https://github.com/david-pessoa/ComputacaoParalela/assets/112708096/759e3522-9476-47b8-bb2f-8a090fe273ab">
   Valor calculado do número de Euler para 8 processadores em: `omp_8.txt`.
-<!--IMPORTANTE: Adicione no README as especificações do processador utilizado para cada uma das execuções.-->
 
-## Como compilar o programa na plataforma disponibilizada:
-  * Passo a passo para  executar `sem_critical.c`:
+### Gráfico com os tempos de execução
+![tempos com critical](https://github.com/david-pessoa/ComputacaoParalela/assets/112708096/5bc7b178-3dd6-4e1a-a66d-0c899a40d39e)
+
+![speedup com critical](https://github.com/david-pessoa/ComputacaoParalela/assets/112708096/8b76d479-f179-46db-9807-82b5cc7eec69)
+
+
+## Como compilar o programa na plataforma disponibilizada e executa-lo:
+  * Passo a passo para executar `sem_critical.c`:
     1) Digite gcc -o programa sem_critical.c -lgmp
     2) Execute o programa informando o número de threads (ex: 2 threads, `./programa 2`)
-       
-## Como executar o programa;
+   
+  * Passo a passo para executar `omp_critical.c`:
+    1) Digite gcc -o programa omp_critical.c -fopenmp -lm -lgmp
+    2) Execute o programa informando o número de threads (ex: 2 threads, `./programa 2`)
+
+    
 ## Como comprovar que os resultados propostos foram alcançados.
 
