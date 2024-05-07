@@ -24,5 +24,5 @@
 ## 3. Introduza na sua solução a diretiva critical. O que muda? Para provar seu ponto, refaça a solução com essa abordagem, calcule os novos valores e construa um novo gráfico de speedup para 1, 2, 4, 6 e 8 processadores.
 
 <!--IMPORTANTE: Adicione no README as especificações do processador utilizado para cada uma das execuções.-->
-### ![Especificações do processador no arquivo cpuinfo.txt]()
+### ![Especificações do processador no arquivo cpuinfo.txt](https://github.com/david-pessoa/ComputacaoParalela/blob/main/ProjFinal/cpuinfo.txt)
 
