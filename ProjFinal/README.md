@@ -37,6 +37,8 @@ Usando a diretiva critical, estamos usando outra biblioteca para aplicar o paral
 ![speedup com critical](https://github.com/david-pessoa/ComputacaoParalela/assets/112708096/8b76d479-f179-46db-9807-82b5cc7eec69)
 
 
+### [Especificações do processador usado nos exercícios no arquivo cpuinfo.txt](https://github.com/david-pessoa/ComputacaoParalela/blob/main/ProjFinal/cpuinfo.txt)
+
 ## Como compilar o programa na plataforma disponibilizada e executa-lo:
   * Passo a passo para executar `sem_critical.c`:
     1) Digite gcc -o programa sem_critical.c -lgmp
@@ -49,4 +51,4 @@ Usando a diretiva critical, estamos usando outra biblioteca para aplicar o paral
     
 ## Como comprovar que os resultados propostos foram alcançados.
 
-### [Especificações do processador usado nos exercícios no arquivo cpuinfo.txt](https://github.com/david-pessoa/ComputacaoParalela/blob/main/ProjFinal/cpuinfo.txt)
+
