@@ -16,8 +16,6 @@
 ## 2) Qual o speedup para 1, 2, 4, 6 e 8 processadores? Desenhe um gráfico mostrando os diferentes valores de speedup.
 ![speedup_sem_critical](https://github.com/david-pessoa/ComputacaoParalela/assets/104323068/2b648e3e-e230-4588-af03-3f0697611030)
 
-### [Especificações do processador usado nos exercícios 1 e 2 no arquivo cpuinfo.txt](https://github.com/david-pessoa/ComputacaoParalela/blob/main/ProjFinal/cpuinfo.txt)
-
 ## 3. Introduza na sua solução a diretiva critical. O que muda? Para provar seu ponto, refaça a solução com essa abordagem, calcule os novos valores e construa um novo gráfico de speedup para 1, 2, 4, 6 e 8 processadores.
 
 Usando a diretiva critical, estamos usando outra biblioteca para aplicar o paralelismo, podendo causar certa diferença nos tempos de execução e speedup.
@@ -51,3 +49,4 @@ Usando a diretiva critical, estamos usando outra biblioteca para aplicar o paral
     
 ## Como comprovar que os resultados propostos foram alcançados.
 
+### [Especificações do processador usado nos exercícios no arquivo cpuinfo.txt](https://github.com/david-pessoa/ComputacaoParalela/blob/main/ProjFinal/cpuinfo.txt)
