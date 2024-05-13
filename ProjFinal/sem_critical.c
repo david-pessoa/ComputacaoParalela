@@ -2,7 +2,6 @@
 #include <stdlib.h>
 #include <math.h>
 #include <semaphore.h>
-#include <time.h>
 #include <pthread.h>
 #include <gmp.h>
 
@@ -66,7 +65,7 @@ void* calcula_fracoes(void *args)
 
   int inicio = (FRAC / num_threads) * index; //calcula indíces de início e fim da iteração no for
   int fim = (FRAC / num_threads) * (index + 1);
-  
+
   for(int i = inicio; i < fim; i++)
   {
   mpf_div_ui(frac, numerador, mpz_get_ui(denominadores[i]));//calcula fração e adiciona valor a Euler
@@ -88,8 +87,6 @@ int main(int argc, char* argv[])
   mpf_set_d(Euler, 0);
   struct ThreadArgs args[num_threads]; //Vetor de argumentos da thread
   pthread_t threads[num_threads]; //Vetor de threads
-  clock_t start, end; //Variáveis para contar o tempo de início o fim da execução
-  start = clock(); //Inicia contagem de tempo
   mpz_t *fat = malloc(FRAC * sizeof(mpz_t)); //Aloca espaço para vetor com os fatoriais de 0 a N - 1
   if (fat == NULL) 
   {
@@ -115,12 +112,8 @@ int main(int argc, char* argv[])
   }
   free(fat);
   sem_destroy(&semaphore); //Destrói semáforo
-  end = clock(); //Encerra o tempo de execução
-  double exec_time = ((double)(end - start)) / CLOCKS_PER_SEC; //Calcula o tempo de execução em ms
-  exec_time *= 1000;
-
   gmp_printf("Euler: %.30113Ff\n", Euler); // 30.113 casas
   printf("Tempo: %lfms\n", exec_time);
-  
+
   return 0;
 }
