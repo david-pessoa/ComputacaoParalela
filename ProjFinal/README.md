@@ -4,7 +4,7 @@
 ## `sem_critical.c`
 Inicialmente, propôs-se criar um vetor do tipo o tipo `unsigned long long int` para armazenar os valores dos denominadores das frações da série de Taylor. Além disso, cada thread ficaria responsável por calcular uma fração que é adicionada à variável global Euler do tipo `long double`. Porém, tal técnica se mostrou ineficiente, pois só conseguimos obter `65 casas decimais` além de possuir um alto custo por conta do overhead de threads. Pensando nisso, chegamos numa nova versão, que utiliza a biblioteca gmp para obter mais casas decimais (logo, o tipo do vetor se tornou: `mpz_t`, usado para números muito grandes, e o tipo de Euler `mpf_t`) e mudamos o código de execução das threads para que elas calculem mais de uma fração. Com essas mudanças, o número de casas decimais saltou para `30.113 casas` e o tempo de execução diminui significativamente.
 
-## `sem_critical.c`
+## `omp_critical.c`
 
 ## Conclusão
 
