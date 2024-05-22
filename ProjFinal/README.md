@@ -1,7 +1,14 @@
 # Evolução do projeto:
-  Nesta seção, será abordada a evolução do projeto. Para resolvermos o problema, desenvolvemos duas soluções:
-  * `sem_critical.c`: utiliza a biblioteca pthreads para paralelização
+  Nesta seção, será abordada a evolução do projeto. Para resolvermos o problema, desenvolvemos duas soluções, apresentadas a seguir. Portanto, esta seção será dividida em três: duas para discutir cada solução criada individualmente e, ao final, uma conclusão.
 
+## `sem_critical.c`
+Inicialmente, propôs-se criar um vetor para armazenar os valores dos denominadores usando o tipo das frações da série de Taylor e cada thread 
+
+## `sem_critical.c`
+
+## Conclusão
+
+# Exercícios
 ## 1) Qual o tempo de execução serial e paralelo para 1, 2, 4, 6 e 8 processadores? Desenhe um gráfico contendo todos os tempos de execução
 * Tempo de execução para 1 processador: <img width="128" alt="sem1" src="https://github.com/david-pessoa/ComputacaoParalela/assets/104323068/1c09493f-299c-475b-80b0-a712f94e13cd">
   Valor calculado do número de Euler para 1 processador em: `sem_1.txt`.
