@@ -1,7 +1,14 @@
 # Evolução do projeto:
-  Nesta seção, será abordada a evolução do projeto. Para resolvermos o problema, desenvolvemos duas soluções:
-  * `sem_critical.c`: utiliza a biblioteca pthreads para paralelização
+  Nesta seção, será abordada a evolução do projeto. Para resolvermos o problema, desenvolvemos duas soluções, apresentadas a seguir. Portanto, esta seção será dividida em três: duas para discutir cada solução criada individualmente e, ao final, uma conclusão.
 
+## `sem_critical.c`
+Inicialmente, propôs-se criar um vetor do tipo o tipo `unsigned long long int` para armazenar os valores dos denominadores das frações da série de Taylor. Além disso, cada thread ficaria responsável por calcular uma fração que é adicionada à variável global Euler do tipo `long double`. Porém, tal técnica se mostrou ineficiente, pois só conseguimos obter `65 casas decimais` além de possuir um alto custo por conta do overhead de threads. Pensando nisso, chegamos numa nova versão, que utiliza a biblioteca gmp para obter mais casas decimais (logo, o tipo do vetor se tornou: `mpz_t`, usado para números muito grandes, e o tipo de Euler `mpf_t`) e mudamos o código de execução das threads para que elas calculem mais de uma fração. Com essas mudanças, o número de casas decimais saltou para `30.113 casas` e o tempo de execução diminui significativamente.
+
+## `omp_critical.c`
+
+## Conclusão
+
+# Exercícios
 ## 1) Qual o tempo de execução serial e paralelo para 1, 2, 4, 6 e 8 processadores? Desenhe um gráfico contendo todos os tempos de execução
 * Tempo de execução para 1 processador: <img width="128" alt="sem1" src="https://github.com/david-pessoa/ComputacaoParalela/assets/104323068/1c09493f-299c-475b-80b0-a712f94e13cd">
   Valor calculado do número de Euler para 1 processador em: `sem_1.txt`.
