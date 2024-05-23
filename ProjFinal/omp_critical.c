@@ -3,7 +3,6 @@
 #include <math.h>
 #include <omp.h>
 #include <gmp.h>
-#include <windows.h>
 
 #define ELEMENTOS 128
 
@@ -23,11 +22,6 @@ void Taylor();
 
 int main(int argc, char* argv[])
 {
-    LARGE_INTEGER start, end, freq;
-
-    QueryPerformanceFrequency(&freq);  // Get the frequency of the high-resolution performance counter
-
-    QueryPerformanceCounter(&start);  // Get the current count
 
     mpf_set_default_prec(100000);
     mpf_init(Euler); //Numero de Euler a ser calculado
@@ -39,10 +33,7 @@ int main(int argc, char* argv[])
 # pragma omp parallel num_threads(thread_count)
     Taylor();
 
-    QueryPerformanceCounter(&end);  // Get the current count again
-    double exec_time = ((double)end.QuadPart - start.QuadPart) / freq.QuadPart * 1000.0;  // Calculate the elapsed time in milliseconds
     gmp_printf("Euler: %.30113Ff\n", Euler); // 30.113 casas
-    printf("Tempo: %lfms\n", exec_time);
     mpf_clear(Euler);
     return 0;
 }
