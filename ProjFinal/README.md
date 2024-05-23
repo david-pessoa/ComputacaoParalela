@@ -64,6 +64,7 @@ Usando a diretiva critical, estamos usando outra biblioteca para aplicar o paral
     
 ## Como comprovar que os resultados propostos foram alcançados.
 Como instalar a biblioteca gmp.h: `sudo apt-get install libgmp3-dev`
+
 Como instalar a biblioteca omp.h  `sudo apt-get install libomp-dev`
 
 
