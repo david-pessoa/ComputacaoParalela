@@ -5,6 +5,7 @@
 Inicialmente, propôs-se criar um vetor do tipo o tipo `unsigned long long int` para armazenar os valores dos denominadores das frações da série de Taylor. Além disso, cada thread ficaria responsável por calcular uma fração que é adicionada à variável global Euler do tipo `long double`. Porém, tal técnica se mostrou ineficiente, pois só conseguimos obter `65 casas decimais` além de possuir um alto custo por conta do overhead de threads. Pensando nisso, chegamos numa nova versão, que utiliza a biblioteca gmp para obter mais casas decimais (logo, o tipo do vetor se tornou: `mpz_t`, usado para números muito grandes, e o tipo de Euler `mpf_t`) e mudamos o código de execução das threads para que elas calculem mais de uma fração. Com essas mudanças, o número de casas decimais saltou para `30.113 casas` e o tempo de execução diminui significativamente.
 
 ## `omp_critical.c`
+Também foram inicialmente utilizados vetores de tipo `unsigned long long int`  para armazenar o maior número possível de casas decimais, mas depois isso também mudou para o tipo `mpz_t` utilizando a biblioteca gmp, com seu número de Euler resultante também saltando para 30.113 casas decimais. Outro ponto importante é que este código estava usando uma biblioteca do Windows para contar o tempo de execução, mas isso foi alterado para não ter nenhuma contagem de tempo no código. Isso porque em sistemas linux, como a máquina EC2 da AWS, existe um comando que podemos colocar na chamada de um executável que já conta o tempo de execução, eliminando a necessidade de uma contagem de tempo no código fonte. O comando em questão é o `time`.
 
 ## Conclusão
 
@@ -58,6 +59,7 @@ Usando a diretiva critical, estamos usando outra biblioteca para aplicar o paral
   * Passo a passo para executar `omp_critical.c`:
     1) Digite gcc -o programa omp_critical.c -fopenmp -lm -lgmp
     2) Execute o programa informando o número de threads (ex: 2 threads, `./programa 2`)
+    3) Se quiser saber o tempo de execução do programa, coloque o comando `time` antes da chamada do executável (ex: `time ./programa 2`)
 
     
 ## Como comprovar que os resultados propostos foram alcançados.
