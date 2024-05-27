@@ -35,9 +35,10 @@ Nesta solução, utilizamos a biblioteca `omp.h` para paralelização do código
   ![Tempos sem_critical](https://github.com/david-pessoa/ComputacaoParalela/assets/104323068/62566949-b901-4137-a68b-0e44fac29967)
   
 ### Gráfico com os tempos de execução de `sem_critical.c`
-
+<img width="399" alt="image" src="https://github.com/david-pessoa/ComputacaoParalela/assets/104323068/2e8d77da-bf35-471a-9d5f-82fda233bc73">
 
 ## 2) Qual o speedup para 1, 2, 4, 6 e 8 processadores? Desenhe um gráfico mostrando os diferentes valores de speedup.
+<img width="404" alt="image" src="https://github.com/david-pessoa/ComputacaoParalela/assets/104323068/7c8b1d63-fc97-423d-a07f-751aa47f9f81">
 
 
 ## 3. Introduza na sua solução a diretiva critical. O que muda? Para provar seu ponto, refaça a solução com essa abordagem, calcule os novos valores e construa um novo gráfico de speedup para 1, 2, 4, 6 e 8 processadores.
@@ -48,9 +49,11 @@ Usando a diretiva critical, estamos usando outra biblioteca para aplicar o paral
   ![Tempos com_critical](https://github.com/david-pessoa/ComputacaoParalela/assets/104323068/5c28ac5f-ca52-4af0-bccc-cc482dddf9d5)
 
 ### Gráfico com os tempos de execução de `omp_critical.c`
+<img width="384" alt="image" src="https://github.com/david-pessoa/ComputacaoParalela/assets/104323068/420ef4f1-7f98-4e8a-8eea-9570af2b35fd">
 
+### Gráfico com o speedup de `omp_critical.c`
+<img width="425" alt="image" src="https://github.com/david-pessoa/ComputacaoParalela/assets/104323068/579acb1f-1ede-445c-8dab-3df617bf4fb1">
 
-### [Especificações do processador usado nos exercícios no arquivo cpuinfo.txt](https://github.com/david-pessoa/ComputacaoParalela/blob/main/ProjFinal/cpuinfo.txt)
 
 ## Como compilar o programa na plataforma disponibilizada e executá-lo:
   * Passo a passo para executar `sem_critical.c`:
@@ -68,5 +71,5 @@ Como instalar a biblioteca gmp.h: `sudo apt-get install libgmp3-dev`
 
 Como instalar a biblioteca omp.h:  `sudo apt-get install libomp-dev`
 
-
+### [Especificações do processador usado nos exercícios no arquivo cpuinfo.txt](https://github.com/david-pessoa/ComputacaoParalela/blob/main/ProjFinal/cpuinfo.txt)
 
