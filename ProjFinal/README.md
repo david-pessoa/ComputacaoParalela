@@ -9,15 +9,15 @@ Nesta solução, utilizamos a biblioteca `omp.h` para paralelização do código
 
 ## Conclusão
 
-# Funções utilizadas da biblioteca `gmp.h` e algoritmo por trás:
+# Funções utilizadas da biblioteca `gmp.h` e o que fazem
 ## Inteiros
 
-  1) `mpz_init()`
-  2) `mpz_set_ui()`
-  3) `mpz_mul_ui()`
+  1) `mpz_init(MP_INT *integer)`: Inicializa uma variável do tipo mpz e coloca seu valor igual a 0.
+  2) `mpz_set_ui(MP_INT *integer, unsigned long int initial_value)`: Inicializa uma variável do tipo mpz e coloca seu valor como sendo igual ao valor do tipo `unsigned int` passado por parâmetro.
+  3) `mpz_mul_ui(MP_INT *product, MP_INT *multiplicator, unsigned long int multiplicand)`: Altera o valor de product para o produto da multiplicação entre `multiplicator` e `multiplicand`.
 
 ## Números Ponto flutuante
-  1) `mpf_init()`
+  1) `mpf_init()`: 
   2) `mpf_set_ui()`
   3) `mpf_div_ui()`
   4) `mpf_get_ui()`
