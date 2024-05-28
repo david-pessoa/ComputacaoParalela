@@ -5,12 +5,6 @@
 #include <pthread.h>
 #include <gmp.h>
 
-//Executar no replit:
-//1) Abra a shell
-//2) Digite nix-shell -p gmp
-//3) Digite gcc -o programa main.c -lgmp
-//4) Execute ./programa
-
 #define FRAC 48 //Número de frações a serem calculadas (66 é o limite)
 sem_t semaphore; //Declara semáforo
 
