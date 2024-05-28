@@ -16,20 +16,20 @@ Observando os resultados finais, é possível concluir que o código utilizando 
 
   1) `mpz_init(MP_INT *integer)`: Inicializa uma variável do tipo mpz e coloca seu valor igual a 0.
   2) `mpz_set_ui(MP_INT *integer, unsigned long int initial_value)`: Inicializa uma variável do tipo mpz e coloca seu valor como sendo igual ao valor do tipo `unsigned int` passado por parâmetro.
-  3) `mpz_mul_ui(MP_INT *product, MP_INT *multiplicator, unsigned long int multiplicand)`: Altera o valor de product para o produto da multiplicação entre `multiplicator` e `multiplicand`.
+  3) `mpz_mul_ui(MP_INT *product, MP_INT *multiplicator, unsigned long int multiplicand)`: Altera o valor de `product` para `multiplicator * multiplicand`.
+  4) `mpz_get_ui(const mpz t op)`:  retorna o valor de op como `unsigned long`.
 
 ## Números Ponto flutuante
-  1) `mpf_init()`: 
-  2) `mpf_set_ui()`
-  3) `mpf_div_ui()`
-  4) `mpf_get_ui()`
-  5) `mpf_add()`
-  6) `mpf_set_default_prec()`
-  7) `mpf_set_d()`
+  1) `mpf_init(mpf_t x)`: Inicializa `x` com valor igual a 0.
+  2) `mpf_set_ui(mpf_t rop, unsigned long int op)`: Inicializa uma variável do tipo mpf_t e coloca seu valor como sendo igual ao valor do tipo `unsigned int` passado por parâmetro.
+  3) `mpf_div_ui(mpf t rop, const mpf t op1, unsigned long int op2)`: Altera o valor de `rop` para  `op1/op2`.
+  4) `mpf_add(mpf t rop, const mpf t op1, const mpf t op2)`: Altera o valor de `rop` para  `op1 + op2`.
+  5) `mpf_set_default_prec(mp_bitcnt_t prec)`: Configura a precisão padrão para ser ao menos igual ao valor de `prec`
+  6) `mpf_set_d(mpf t rop, double op)`: Inicializa uma variável do tipo mpf_t e coloca seu valor como sendo igual ao valor do tipo `double` passado por parâmetro.
 
+Usamos as funções do tipo inteiro, somente no `sem_critical.c` para calcular os valores dos fatoriais, sendo a `mpz_mul_ui()` para obter o valor de um novo fatorial a partir do anterior e `mpz_get_ui()` para calcular obter o último fatorial calculado. (ex: 7! = 7 * 6!, `mpz_get_ui()` obteria o valor 6! do vetor e `mpz_mul_ui()` multiplicaria por 7). 
 
-
-
+Enquanto usamos as funções do tipo ponto flutuante para poder lidar com a variável Euler. Usamos `mpf_div_ui()` para calcular o valor de cada fração a partir da divisão 1/denominador. Além disso, usamos `mpf_add()` para calcular o valor da soma das frações que cada thread é responsável por calcular e depois a adição desta soma à variável global Euler.
 
 # Exercícios
 ## 1) Qual o tempo de execução serial e paralelo para 1, 2, 4, 6 e 8 processadores? Desenhe um gráfico contendo todos os tempos de execução
